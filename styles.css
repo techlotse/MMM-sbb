@@ -1,0 +1,49 @@
+.MMM-sbb {
+  /* inherit */
+}
+
+.MMM-sbb .sbb-group {
+  margin-bottom: 6px;
+}
+
+.MMM-sbb .sbb-group-header {
+  font-weight: 600;
+  margin: 6px 0 2px;
+  text-transform: none;
+  color: #ddd;
+  font-size: 90%;
+}
+
+.MMM-sbb .sbb-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto auto;
+  grid-column-gap: 8px;
+  align-items: center;
+  margin: 2px 0;
+}
+
+.MMM-sbb .line {
+  font-weight: 700;
+  border-radius: 4px;
+  padding: 2px 6px;
+  min-width: 38px;
+  text-align: center;
+}
+
+/* Destination and meta */
+.MMM-sbb .dest { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.MMM-sbb .track { color: #aaa; font-size: 90%; }
+.MMM-sbb .time { font-variant-numeric: tabular-nums; }
+.MMM-sbb .delay { color: #ffcc00; font-weight: 700; margin-left: 6px; }
+
+/* ===== SBB Line Colours ===== */
+.MMM-sbb .type-s { background-color: #009739; color: #fff; }      /* S-Bahn (green) */
+.MMM-sbb .type-ir { background-color: #005EB8; color: #fff; }     /* IR (blue) */
+.MMM-sbb .type-ic { background-color: #E30613; color: #fff; }     /* IC (red) */
+.MMM-sbb .type-re { background-color: #F28C00; color: #fff; }     /* RE (orange) */
+.MMM-sbb .type-ec { background-color: #6A1B9A; color: #fff; }     /* EC (purple) */
+.MMM-sbb .type-rjx { background-color: #1C7C54; color: #fff; }    /* RJX (teal) */
+.MMM-sbb .type-r { background-color: #666; color: #fff; }         /* Regio (grey) */
+.MMM-sbb .type-bus { background-color: #2C3E50; color: #fff; }    /* Bus (dark slate) */
+.MMM-sbb .type-tram { background-color: #16A085; color: #fff; }   /* Tram (green-cyan) */
+.MMM-sbb .type-other { background-color: #444; color: #fff; }     /* Fallback */

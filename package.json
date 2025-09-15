@@ -1,0 +1,12 @@
+{
+  "name": "MMM-sbb",
+  "version": "1.0.0",
+  "description": "MagicMirror² module for Swiss public transport departures with grouping and SBB line colours.",
+  "main": "MMM-sbb.js",
+  "author": "techlotse + Copilot",
+  "license": "The Unlicense",
+  "keywords": ["MagicMirror", "SBB", "Switzerland", "Transport", "Stationboard"],
+  "dependencies": {
+    "node-fetch": "^2.6.7"
+  }
+}

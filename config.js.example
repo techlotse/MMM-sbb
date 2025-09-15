@@ -1,0 +1,16 @@
+{
+  module: "MMM-sbb",
+  position: "bottom_left",
+  header: "Abfahrten Rotkreuz",
+  config: {
+    station: "Rotkreuz",
+    to: "",                 // e.g., "Zürich HB" or "" for all
+    maxDepartures: 8,
+    updateInterval: 60000,  // 60s
+    timeFormat: "relative", // "relative" or "absolute"
+    showLine: true,
+    showTrack: true,
+    showDelay: true,
+    groupByType: true       // group by S/IR/IC/RE/...
+  }
+}
