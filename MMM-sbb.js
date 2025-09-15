@@ -139,18 +139,19 @@ Module.register("MMM-sbb", {
   },
 
   getTypeKey(line = "") {
-    const L = (line || "").toUpperCase();
-    if (L.startsWith("IC")) return "IC";
-    if (L.startsWith("EC")) return "EC";
-    if (L.startsWith("RJX")) return "RJX";
-    if (L.startsWith("IR")) return "IR";
-    if (L.startsWith("RE")) return "RE";
-    if (L.startsWith("S")) return "S";
-    if (L.startsWith("R")) return "R";
-    if (L.startsWith("BUS")) return "BUS";
-    if (L.startsWith("TRAM")) return "TRAM";
-    return "OTHER";
-  },
+   const L = (line || "").toUpperCase();
+   if (L.startsWith("IC")) return "IC";
+   if (L.startsWith("EC")) return "EC";
+   if (L.startsWith("RJX")) return "RJX";
+   if (L.startsWith("IR")) return "IR";
+   if (L.startsWith("RE")) return "RE";
+   if (L.startsWith("S")) return "S";
+   if (/^\d+$/.test(L)) return "R"; // purely numeric lines
+   if (L.startsWith("R")) return "R";
+   if (L.startsWith("BUS")) return "BUS";
+   if (L.startsWith("TRAM")) return "TRAM";
+   return "OTHER";
+ },
 
   getTypeClass(line = "") {
     const key = this.getTypeKey(line);

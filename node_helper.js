@@ -59,18 +59,27 @@ module.exports = NodeHelper.create({
 
   mapDeparture(item) {
     try {
-      const line = item?.number || item?.name || "";
+      const category = item?.category || "";
+      const number = item?.number || "";
+      const line = `${category}${number}`.trim(); // e.g., "S26", "IR75", "IC5"
+  
       const to = item?.to || "";
       const stop = item?.stop || {};
       const when = stop?.departure || stop?.prognosis?.departure || stop?.arrival;
-      const timeAbs = when ? new Date(when).toLocaleTimeString("de-CH", { hour: "2-digit", minute: "2-digit" }) : "";
+      const timeAbs = when
+        ? new Date(when).toLocaleTimeString("de-CH", { hour: "2-digit", minute: "2-digit" })
+        : "";
+  
       const delay = stop?.prognosis?.departure && stop?.departure
         ? Math.max(0, Math.round((new Date(stop.prognosis.departure) - new Date(stop.departure)) / 60000))
         : (stop?.delay || 0);
+  
       const track = stop?.platform || "";
+  
       return { line, to, when, timeAbs, delay, track };
     } catch {
       return null;
     }
   }
+
 });
