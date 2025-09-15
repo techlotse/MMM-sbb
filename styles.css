@@ -1,49 +1,109 @@
-.MMM-sbb {
-  /* inherit */
-}
+/* ============================================
+   MMM-sbb — SBB-style departures
+   ============================================ */
 
-.MMM-sbb .sbb-group {
-  margin-bottom: 6px;
-}
+/* Layout */
+.MMM-sbb .sbb-group { margin-bottom: 8px; }
 
 .MMM-sbb .sbb-group-header {
-  font-weight: 600;
-  margin: 6px 0 2px;
-  text-transform: none;
+  font-weight: 700;
+  margin: 8px 0 4px;
   color: #ddd;
   font-size: 90%;
+  letter-spacing: 0.2px;
 }
 
 .MMM-sbb .sbb-row {
   display: grid;
   grid-template-columns: auto 1fr auto auto auto;
-  grid-column-gap: 8px;
+  grid-column-gap: 10px;
   align-items: center;
-  margin: 2px 0;
+  margin: 3px 0;
 }
 
+/* Common badge style */
 .MMM-sbb .line {
   font-weight: 700;
   border-radius: 4px;
-  padding: 2px 6px;
-  min-width: 38px;
+  padding: 2px 8px;
+  min-width: 44px;
   text-align: center;
+  line-height: 1.2;
+  border: 1px solid transparent;
+  font-variant-numeric: tabular-nums;
 }
 
 /* Destination and meta */
-.MMM-sbb .dest { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.MMM-sbb .dest {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .MMM-sbb .track { color: #aaa; font-size: 90%; }
-.MMM-sbb .time { font-variant-numeric: tabular-nums; }
+.MMM-sbb .time  { font-variant-numeric: tabular-nums; }
 .MMM-sbb .delay { color: #ffcc00; font-weight: 700; margin-left: 6px; }
 
-/* ===== SBB Line Colours ===== */
-.MMM-sbb .type-s { background-color: #009739; color: #fff; }      /* S-Bahn (green) */
-.MMM-sbb .type-ir { background-color: #005EB8; color: #fff; }     /* IR (blue) */
-.MMM-sbb .type-ic { background-color: #E30613; color: #fff; }     /* IC (red) */
-.MMM-sbb .type-re { background-color: #F28C00; color: #fff; }     /* RE (orange) */
-.MMM-sbb .type-ec { background-color: #6A1B9A; color: #fff; }     /* EC (purple) */
-.MMM-sbb .type-rjx { background-color: #1C7C54; color: #fff; }    /* RJX (teal) */
-.MMM-sbb .type-r { background-color: #666; color: #fff; }         /* Regio (grey) */
-.MMM-sbb .type-bus { background-color: #2C3E50; color: #fff; }    /* Bus (dark slate) */
-.MMM-sbb .type-tram { background-color: #16A085; color: #fff; }   /* Tram (green-cyan) */
-.MMM-sbb .type-other { background-color: #444; color: #fff; }     /* Fallback */
+/* ============================================
+   Colour mapping (as per your spec)
+   ============================================ */
+
+/* SBB Red (white text) for:
+   - IC / IC## / ICN / ICN##
+   - IR / IR##
+   - EC / EC##
+   - RJ / RJ## / RJX / RJX##
+*/
+.MMM-sbb .type-ic,
+.MMM-sbb .type-icn,
+.MMM-sbb .type-ir,
+.MMM-sbb .type-ec,
+.MMM-sbb .type-rj,
+.MMM-sbb .type-rjx {
+  background-color: #E30613; /* SBB Red */
+  color: #ffffff;
+  border-color: #E30613;
+}
+
+/* RE: Red text on white background */
+.MMM-sbb .type-re {
+  background-color: #ffffff;
+  color: #E30613;
+  border-color: #E30613;
+}
+
+/* R / R## and S / S##: Black text on white background */
+.MMM-sbb .type-r,
+.MMM-sbb .type-s {
+  background-color: #ffffff;
+  color: #000000;
+  border-color: #000000;
+}
+
+/* Bus: Dark blue text on white background */
+.MMM-sbb .type-bus {
+  background-color: #ffffff;
+  color: #003366;    /* dark blue */
+  border-color: #003366;
+}
+
+/* Tram: Dark purple text on white background */
+.MMM-sbb .type-tram {
+  background-color: #ffffff;
+  color: #4B0082;    /* indigo/dark purple */
+  border-color: #4B0082;
+}
+
+/* Boat (BAT): Dark green text on white background */
+.MMM-sbb .type-bat {
+  background-color: #ffffff;
+  color: #006400;    /* dark green */
+  border-color: #006400;
+}
+
+/* Fallback */
+.MMM-sbb .type-other {
+  background-color: #ffffff;
+  color: #333333;
+  border-color: #999999;
+}
