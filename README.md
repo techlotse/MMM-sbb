@@ -9,7 +9,7 @@ Data source: [transport.opendata.ch](https://transport.opendata.ch)
 ## ✨ Features
 
 - 📍 **Next departures** for a chosen station (e.g., `Zürich HB`)
-- 🎯 **Optional destination filter** (e.g., only show trains to `"Bern"` — *use quotes if the destination contains spaces*)
+- 🎯 **Optional destination filter** (e.g., only show trains to `"Bern"`)
 - 🗂 **Group by train type** (S / IR / IC / RE / …)
 - 🎨 **SBB-like line colours** for instant recognition
 - ⏱ **Relative** (`in X min`) or **absolute** (`HH:MM`) time display
@@ -70,23 +70,6 @@ The module assigns CSS classes based on transport type:
 .type-tram  { /* Tram */ }
 .type-other { /* Other */ }
 ```
-
----
-
-## 🏷 SBB-Style Badges
-
-| Train Type | Badge Example |
-|------------|---------------|
-| S-Bahn     | ![S-Bahn Badge](https://img.shields.io/badge/S2-005CA9?style=for-the-badge&logo=swiss&logoColor=white) |
-| IR         | ![IR Badge](https://img.shields.io/badge/IR15-E30613?style=for-the-badge&logo=swiss&logoColor=white) |
-| IC         | ![IC Badge](https://img.shields.io/badge/IC5-000000?style=for-the-badge&logo=swiss&logoColor=white) |
-| RE         | ![RE Badge](https://img.shields.io/badge/RE-FFCC00?style=for-the-badge&logo=swiss&logoColor=black) |
-| EC         | ![EC Badge](https://img.shields.io/badge/EC-007A33?style=for-the-badge&logo=swiss&logoColor=white) |
-| RJX        | ![RJX Badge](https://img.shields.io/badge/RJX-8B0000?style=for-the-badge&logo=swiss&logoColor=white) |
-| Bus        | ![Bus Badge](https://img.shields.io/badge/Bus-FF6600?style=for-the-badge&logo=bus&logoColor=white) |
-| Tram       | ![Tram Badge](https://img.shields.io/badge/Tram-009688?style=for-the-badge&logo=tram&logoColor=white) |
-
----
 
 ## 📌 Notes
 
