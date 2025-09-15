@@ -1,9 +1,9 @@
 {
   module: "MMM-sbb",
   position: "bottom_left",
-  header: "Abfahrten Rotkreuz",
+  header: "Abfahrten Zermatt",
   config: {
-    station: "Rotkreuz",
+    station: "Zermatt",
     to: "",                 // e.g., "Zürich HB" or "" for all
     maxDepartures: 8,
     updateInterval: 60000,  // 60s

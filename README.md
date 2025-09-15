@@ -1,33 +1,120 @@
-# MMM-sbb
+Here’s the **entire updated README.md** in one clean, copy‑and‑paste‑ready block for you:  
 
-A modern MagicMirror² module showing Swiss public transport departures (SBB, IR, IC, S-Bahn, etc.), with grouping and SBB-style line colours.
+```markdown
+# 🚆 MMM-sbb
 
-Data: transport.opendata.ch
+A **modern [MagicMirror²](https://magicmirror.builders/)** module that displays **Swiss public transport departures** — including SBB, IR, IC, S-Bahn, and more — with **grouping** and **authentic SBB-style line colours**.
 
-## Features
-- Next departures for a station (e.g., Rotkreuz)
-- Optional destination filter (e.g., to Zürich HB)
-- Group by train type (S/IR/IC/RE/…)
-- SBB-like line colours
-- Relative or absolute time
-- Track and delay display
+Data source: [transport.opendata.ch](https://transport.opendata.ch)
 
-## Options
-station: Station name or ID (string, required)
-to: Destination filter (string, optional)
-maxDepartures: number of rows (default 8)
-updateInterval: fetch interval in ms (default 60000)
-timeFormat: "relative" shows "in X Min", "absolute" shows HH:MM
-showLine: show line badge (default true)
-showTrack: show platform (default true)
-showDelay: show delay minutes if available (default true)
-groupByType: group by S/IR/IC/… (default true)
+---
 
-## Styling
-Colours can be adjusted in styles.css. The module assigns classes like:
+## ✨ Features
 
-.type-s, .type-ir, .type-ic, .type-re, .type-ec, .type-rjx, .type-r, .type-bus, .type-tram, .type-other
+- 📍 **Next departures** for a chosen station (e.g., `Zürich HB`)
+- 🎯 **Optional destination filter** (e.g., only show trains to `"Bern"` — *use quotes if the destination contains spaces*)
+- 🗂 **Group by train type** (S / IR / IC / RE / …)
+- 🎨 **SBB-like line colours** for instant recognition
+- ⏱ **Relative** (`in X min`) or **absolute** (`HH:MM`) time display
+- 🚉 **Track** and **delay** information
 
-## Notes
-This module queries https://transport.opendata.ch/v1/stationboard (no API key).
-To include buses/trams, remove or adjust the transportations[] filter in node_helper.js.
+---
+
+## ⚙️ Configuration Options
+
+Add the module to your `config.js`:
+
+```js
+{
+  module: "MMM-sbb",
+  position: "top_left",
+  config: {
+    station: "Zürich HB",       // Required
+    to: "Bern",                 // Optional — use quotes if destination has spaces
+    maxDepartures: 8,
+    updateInterval: 60000,      // in ms
+    timeFormat: "relative",     // "relative" or "absolute"
+    showLine: true,
+    showTrack: true,
+    showDelay: true,
+    groupByType: true
+  }
+}
+```
+
+| Option           | Type    | Default   | Description |
+|------------------|---------|-----------|-------------|
+| `station`        | string  | —         | Station name or ID (**required**) |
+| `to`             | string  | —         | Destination filter (**optional**) — *use quotes if it contains spaces* |
+| `maxDepartures`  | number  | `8`       | Number of rows to display |
+| `updateInterval` | number  | `60000`   | Refresh interval in ms |
+| `timeFormat`     | string  | `"relative"` | `"relative"` = `in X min`, `"absolute"` = `HH:MM` |
+| `showLine`       | boolean | `true`    | Show line badge |
+| `showTrack`      | boolean | `true`    | Show platform |
+| `showDelay`      | boolean | `true`    | Show delay minutes if available |
+| `groupByType`    | boolean | `true`    | Group by S/IR/IC/RE/… |
+
+---
+
+## 🎨 Styling
+
+You can customise colours in `styles.css`.  
+The module assigns CSS classes based on transport type:
+
+```css
+.type-s     { /* S-Bahn */ }
+.type-ir    { /* InterRegio */ }
+.type-ic    { /* InterCity */ }
+.type-re    { /* RegioExpress */ }
+.type-ec    { /* EuroCity */ }
+.type-rjx   { /* Railjet Express */ }
+.type-r     { /* Regio */ }
+.type-bus   { /* Bus */ }
+.type-tram  { /* Tram */ }
+.type-other { /* Other */ }
+```
+
+---
+
+## 🏷 SBB-Style Badges
+
+| Train Type | Badge Example |
+|------------|---------------|
+| S-Bahn     | ![S-Bahn Badge](https://img.shields.io/badge/S2-005CA9?style=for-the-badge&logo=swiss&logoColor=white) |
+| IR         | ![IR Badge](https://img.shields.io/badge/IR15-E30613?style=for-the-badge&logo=swiss&logoColor=white) |
+| IC         | ![IC Badge](https://img.shields.io/badge/IC5-000000?style=for-the-badge&logo=swiss&logoColor=white) |
+| RE         | ![RE Badge](https://img.shields.io/badge/RE-FFCC00?style=for-the-badge&logo=swiss&logoColor=black) |
+| EC         | ![EC Badge](https://img.shields.io/badge/EC-007A33?style=for-the-badge&logo=swiss&logoColor=white) |
+| RJX        | ![RJX Badge](https://img.shields.io/badge/RJX-8B0000?style=for-the-badge&logo=swiss&logoColor=white) |
+| Bus        | ![Bus Badge](https://img.shields.io/badge/Bus-FF6600?style=for-the-badge&logo=bus&logoColor=white) |
+| Tram       | ![Tram Badge](https://img.shields.io/badge/Tram-009688?style=for-the-badge&logo=tram&logoColor=white) |
+
+---
+
+## 📌 Notes
+
+- Uses the [transport.opendata.ch Stationboard API](https://transport.opendata.ch/v1/stationboard) — **no API key required**.
+- To include buses or trams, remove or adjust the `transportations[]` filter in `node_helper.js`.
+
+---
+
+## 📷 Visual Example
+
+Here’s how **MMM-sbb** looks in action on a MagicMirror² setup:
+
+![MMM-sbb Screenshot](docs/screenshot.png)
+
+---
+
+## 💡 Tip
+
+If your destination contains spaces (e.g., `Zürich Flughafen`), **wrap it in quotes** in your config:
+
+```js
+to: "Zürich Flughafen"
+```
+```
+
+---
+
+If you want, I can also give you a **ready-to-run terminal command** that will create the folder, drop this README in, and prepare the `docs/` folder for your screenshot so you can zip it instantly. Would you like me to prepare that?
