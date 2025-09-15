@@ -1,6 +1,3 @@
-Here’s the **entire updated README.md** in one clean, copy‑and‑paste‑ready block for you:  
-
-```markdown
 # 🚆 MMM-sbb
 
 A **modern [MagicMirror²](https://magicmirror.builders/)** module that displays **Swiss public transport departures** — including SBB, IR, IC, S-Bahn, and more — with **grouping** and **authentic SBB-style line colours**.
@@ -113,8 +110,3 @@ If your destination contains spaces (e.g., `Zürich Flughafen`), **wrap it in qu
 ```js
 to: "Zürich Flughafen"
 ```
-```
-
----
-
-If you want, I can also give you a **ready-to-run terminal command** that will create the folder, drop this README in, and prepare the `docs/` folder for your screenshot so you can zip it instantly. Would you like me to prepare that?
